@@ -34,7 +34,7 @@ While the entry point of a plugin only registers lambdas (which are hidden class
 
 `MethodHandles.Lookup#defineHiddenClass()` performs very few checks, but sadly it does a fatal one: It checks if the package of the calling class is the same as what we are trying to define. We can really see that it's designed to create lambdas and nothing else.
 
-Hacking this layer of checks is quite easy, but then the actual class definition is delegated to
+Hacking this layer of checks is quite easy, but then the actual class definition is delegated to `SharedsSecrets` and, uhh... I don't want to mess with that.
 
 ### Not an Option
 
