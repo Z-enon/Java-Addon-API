@@ -266,7 +266,7 @@ public final class PluginManager {
             Class<?> clazz = loader.loadClass(plugin.mainClassName());
 
             Method method = clazz.getDeclaredMethod("main", String[].class);
-            method.invoke(null, (Object) null);
+            method.invoke(null, (Object) null); // lots of PluginManager::registerHook calls
 
             classLoadersByPlugin.put(plugin, loader);
 
@@ -292,17 +292,17 @@ public final class PluginManager {
         if (entries == null)
             throw new RuntimeException("Trying to unload an unknown plugin");
 
-        boolean[] ptr = new boolean[1];
+        boolean b = false;
         for (var entry : entries) {
             HookListener<?> listener = listenersByClass.get(entry.getValue());
             listener.removeHook(entry.getKey());
-            ptr[0] |= listener.critical;
+            b |= listener.critical;
         }
         loadedPlugins.remove(plugin);
 
         classLoadersByPlugin.remove(plugin);
 
-        return ptr[0];
+        return b;
     }
 
 
