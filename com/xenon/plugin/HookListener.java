@@ -32,7 +32,7 @@ public class HookListener<T> {
         System.arraycopy(priorities, 0, ar2, 0, i);
         ar1[i] = h;
         ar2[i] = p.ordinal();
-        if (i != len) { // optional since len - i can never be less than 0 (i <= len always)
+        if (i != len) { // branching optional since len - i can never be less than 0 (i <= len always)
             System.arraycopy(hooks, i, ar1, i + 1, len - i);
             System.arraycopy(priorities, i, ar2, i + 1, len - i);
         }
