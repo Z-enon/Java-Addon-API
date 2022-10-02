@@ -15,7 +15,7 @@ The QOL features include:
 - Performance (so obviously no reflection in hot loop, but that should go without saying)
 - Hook system: A plugin doesn't have to implement all abstract methods and can instead implement hooks as it wishes. (much like ExtensionPoints in PF4J)
 - No restart required for loading a plugin: plugins can be loaded/unloaded dynamically at runtime. (though a restart may be needed depending on what the plugin does)
-- Stylish code (for myself)
+- Stylish code (not dirty tricks hidden behind encapsulation), for myself
 
 The above imply a few things:
 
