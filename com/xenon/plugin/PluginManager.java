@@ -107,7 +107,7 @@ public final class PluginManager {
     public static Set<Plugin> unloadedPlugins_cpy() {
         assert scannedPlugins != null;
         Set<Plugin> s = new HashSet<>(scannedPlugins);
-        loadedPlugins.forEach(s::remove);
+        s.removeAll(loadedPlugins);
         return s;
     }
 
