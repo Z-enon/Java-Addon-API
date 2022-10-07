@@ -46,7 +46,7 @@ public record Plugin(@NotNull Path path, @NotNull String name, @NotNull Path mai
 
     @Override
     public boolean equals(Object o) {
-        return this == o || (o instanceof Plugin && ((Plugin) o).name.equals(name));
+        return this == o || (o instanceof Plugin p && p.name.equals(name));
     }
 
     @Override
