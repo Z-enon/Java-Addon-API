@@ -38,4 +38,4 @@ It is inherently designed to **load** bytecode, not **unload** some.
 
 ## Concretely
 
-This project showcases the *First Option*.
+This project showcases the **First Option**.
