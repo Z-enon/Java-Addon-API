@@ -51,7 +51,7 @@ import java.util.stream.*;
  * <h3>EDIT:</h3>
  * Fetching class in foreign class using hidden classes is a failure, since it would require hacking into
  * {@code JavaLangAccess} to simulate {@code MethodHandles.Lookup.defineHiddenClass()}.
- * A classic Class Loader trick is therefore used (not the usual garbage URLClassLoader.addURL).
+ * A classic Class Loader trick is therefore used.
  */
 public final class PluginManager {
 
