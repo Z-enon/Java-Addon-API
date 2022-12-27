@@ -47,7 +47,7 @@ public class HookListener<T> {
         var ar2 = new int[new_len];
         int i = 0;
         for (; i < len; i++)
-            if (hooks[i] ==h)
+            if (hooks[i] == h)
                 break;
 
         if (i == len)
